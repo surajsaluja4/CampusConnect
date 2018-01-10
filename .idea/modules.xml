@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CampusConnect.iml" filepath="$PROJECT_DIR$/CampusConnect.iml" />
+      <module fileurl="file://E:\AndroidStudioProjects\CampusConnect\CampusConnect.iml" filepath="E:\AndroidStudioProjects\CampusConnect\CampusConnect.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

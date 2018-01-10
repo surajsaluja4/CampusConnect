@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 
 /**
@@ -17,7 +20,7 @@ import android.view.ViewGroup;
  * Use the {@link AddComplaintFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AddComplaintFragment extends android.app.Fragment {
+public class AddComplaintFragment extends android.app.Fragment implements AdapterView.OnItemSelectedListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -26,6 +29,10 @@ public class AddComplaintFragment extends android.app.Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    Spinner category;
+    String[] complaintCategories = {"Select","Sanitation","Security","Electrical Work","Civil Work","Ragging","Sexual Harassment", "Others"};
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,7 +71,16 @@ public class AddComplaintFragment extends android.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_complaint, container, false);
+        View v= inflater.inflate(R.layout.fragment_add_complaint, container, false);
+
+        category = (Spinner)v.findViewById(R.id.category);
+        category.setOnItemSelectedListener(this);
+
+        ArrayAdapter adapter = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,complaintCategories);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        category.setAdapter(adapter);
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -89,6 +105,16 @@ public class AddComplaintFragment extends android.app.Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 
     /**
