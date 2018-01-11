@@ -1,14 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.hp.campusconnect.Login">
-
+    android:orientation="vertical">
     <!-- TODO: Update blank fragment layout -->
-
     <TextView
-        android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -17,7 +12,6 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/editText6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
@@ -37,19 +31,18 @@
         android:inputType="textPassword|textVisiblePassword" />
 
     <Button
-        android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:background="@android:color/holo_red_light"
+        android:onClick="login"
         android:text="@string/login"
         android:textColor="@android:color/background_light"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -58,12 +51,12 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/button4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:background="@android:color/holo_green_light"
+        android:onClick="signUp"
         android:text="@string/signup"
         android:textColor="@android:color/background_light"
         android:textSize="20sp" />

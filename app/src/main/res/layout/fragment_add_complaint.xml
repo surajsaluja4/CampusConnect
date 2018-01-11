@@ -1,5 +1,4 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,61 +9,55 @@
     tools:context="com.example.hp.campusconnect.AddComplaintFragment">
 
     <TextView
+        android:id="@+id/complaintText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Complaint"
-        android:id="@+id/complaintText"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <android.support.design.widget.TextInputLayout
+        android:id="@+id/subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/subject"
         android:layout_below="@+id/complaintText"
         android:layout_marginTop="@dimen/elementSpacing">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/subject1"
             android:hint="@string/subject"
-            android:inputType="text"/>
-
+            android:inputType="text" />
     </android.support.design.widget.TextInputLayout>
 
     <TextView
+        android:id="@+id/spinnerText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/subject"
         android:layout_marginTop="@dimen/elementSpacing"
-        android:id="@+id/spinnerText"
-        android:text="@string/category"
-        android:layout_below="@+id/subject"/>
+        android:text="@string/category" />
 
     <Spinner
         android:id="@+id/category"
         android:layout_width="match_parent"
         android:layout_height="@dimen/spinnerWidth"
+        android:layout_below="@+id/subject"
         android:layout_marginTop="@dimen/elementSpacing"
-        android:layout_toRightOf="@+id/spinnerText"
-        android:layout_below="@+id/subject"/>
+        android:layout_toEndOf="@+id/spinnerText" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/description"
         android:layout_below="@+id/category"
         android:layout_marginTop="@dimen/elementSpacing">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/description1"
             android:hint="@string/description"
-            android:maxLines="5"
-            android:inputType="textMultiLine"/>
-
+            android:inputType="textMultiLine"
+            android:maxLines="5" />
     </android.support.design.widget.TextInputLayout>
-
 
     <Button
         android:id="@+id/submitButton"
@@ -76,12 +69,9 @@
         android:text="@string/submit" />
 
     <Button
-        android:id="@+id/discardButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/submitButton"
-        android:text="@string/discard"
-        android:layout_alignParentBottom="true"/>
-
-
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/submitButton"
+        android:text="@string/discard" />
 </RelativeLayout>
