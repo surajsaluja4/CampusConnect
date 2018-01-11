@@ -15,5 +15,20 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="issue">Issue</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="unsatisfied_n_reopen_the_problem">Unsatisfied?\n Reopen the Problem </string>
+    <string name="rate_the_solution">Rate the Solution</string>
+    <string name="input_your_suggestion">Input your Suggestions </string>
+    <string name="reopen_the_problem">Reopen The Problem</string>
+    <string name="enter_your_name">Enter your Name</string>
+    <string name="name">Name</string>
+    <string name="textview">TextView</string>
+    <string name="your_name">Your Name</string>
+    <string name="phone_no">Phone No.</string>
+    <string name="email_id">Email ID</string>
+    <string name="select_your_college">Select Your College</string>
+    <string name="select_your_department">Select Your Department</string>
+    <string name="button">Button</string>
 
 </resources>
