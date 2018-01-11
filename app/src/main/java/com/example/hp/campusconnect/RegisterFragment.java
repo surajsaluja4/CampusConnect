@@ -11,30 +11,29 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Register.OnFragmentInteractionListener} interface
+ * {@link RegisterFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Register#newInstance} factory method to
+ * Use the {@link RegisterFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Register extends Fragment {
+public class RegisterFragment extends android.app.Fragment implements AdapterView.OnItemSelectedListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    Spinner College;
-    String[] CollegeOptions = {"Select","PIET","SGI","DITM","UIET", "Others"};
-    Spinner Dept;
-    String[] DeptOptions = {"Select","B.Tech-CSE","B.Tech-ECE","B.Tech-MECH." ,"BBA"};
+    Spinner college;
+    String[] collegeOptions = {"Select", "PIET", "SGI", "DITM", "UIET", "Others"};
+    Spinner dept;
+    String[] deptOptions = {"Select", "B.Tech-CSE", "B.Tech-ECE", "B.Tech-MECH.", "BBA"};
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private OnFragmentInteractionListener mListener;
 
-    public Register() {
+    public RegisterFragment() {
         // Required empty public constructor
     }
 
@@ -44,11 +43,11 @@ public class Register extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Register.
+     * @return A new instance of fragment RegisterFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Register newInstance(String param1, String param2) {
-        Register fragment = new Register();
+    public static RegisterFragment newInstance(String param1, String param2) {
+        RegisterFragment fragment = new RegisterFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -70,29 +69,17 @@ public class Register extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_register, container, false);
-
-
-
-
-        College.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
-
-        ArrayAdapter adapter = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,CollegeOptions);
+        college = v.findViewById(R.id.college);
+        college.setOnItemSelectedListener(this);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, collegeOptions);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        College.setAdapter(adapter);
-
-
-        Dept.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
-
-        ArrayAdapter Deptadapter = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,DeptOptions);
+        college.setAdapter(adapter);
+        dept = v.findViewById(R.id.dept);
+        dept.setOnItemSelectedListener(this);
+        ArrayAdapter Deptadapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, deptOptions);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Dept.setAdapter(Deptadapter);
-
-
+        dept.setAdapter(Deptadapter);
         return v;
-
-
-
-
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -117,6 +104,16 @@ public class Register extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 
     /**

@@ -17,7 +17,6 @@ import java.util.List;
  * TODO: Replace the implementation with code for your data type.
  */
 public class MyNoticesRecyclerViewAdapter extends RecyclerView.Adapter<MyNoticesRecyclerViewAdapter.ViewHolder> {
-
     private final List<DummyItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
@@ -38,7 +37,6 @@ public class MyNoticesRecyclerViewAdapter extends RecyclerView.Adapter<MyNotices
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
-
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,8 +63,8 @@ public class MyNoticesRecyclerViewAdapter extends RecyclerView.Adapter<MyNotices
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mIdView = view.findViewById(R.id.id);
+            mContentView = view.findViewById(R.id.content);
         }
 
         @Override

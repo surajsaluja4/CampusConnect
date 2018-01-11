@@ -3,12 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.hp.campusconnect.Register">
-
+    tools:context="com.example.hp.campusconnect.RegisterFragment">
     <!-- TODO: Update blank fragment layout -->
-
     <EditText
-        android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="13dp"
@@ -20,7 +17,6 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editText4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="13dp"
@@ -31,7 +27,6 @@
         android:inputType="phone" />
 
     <EditText
-        android:id="@+id/editText5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="13dp"
@@ -42,7 +37,6 @@
         android:inputType="textEmailAddress" />
 
     <TextView
-        android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -52,7 +46,7 @@
         android:textSize="18sp" />
 
     <Spinner
-        android:id="@+id/College"
+        android:id="@+id/college"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -60,7 +54,6 @@
         android:layout_marginTop="10dp" />
 
     <TextView
-        android:id="@+id/textView10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -70,7 +63,7 @@
         android:textSize="18sp" />
 
     <Spinner
-        android:id="@+id/Dept"
+        android:id="@+id/dept"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -78,7 +71,6 @@
         android:layout_marginTop="10dp" />
 
     <Button
-        android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
@@ -90,5 +82,4 @@
         android:text="@string/submit"
         android:textColor="@android:color/background_light"
         android:textSize="18sp" />
-
 </LinearLayout>

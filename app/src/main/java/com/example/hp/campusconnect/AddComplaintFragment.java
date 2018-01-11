@@ -11,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -25,15 +24,11 @@ public class AddComplaintFragment extends android.app.Fragment implements Adapte
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    Spinner category;
+    String[] complaintCategories = {"Select", "Sanitation", "Security", "Electrical Work", "Civil Work", "Ragging", "Sexual Harassment", "Others"};
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-    Spinner category;
-    String[] complaintCategories = {"Select","Sanitation","Security","Electrical Work","Civil Work","Ragging","Sexual Harassment", "Others"};
-
-
     private OnFragmentInteractionListener mListener;
 
     public AddComplaintFragment() {
@@ -71,15 +66,12 @@ public class AddComplaintFragment extends android.app.Fragment implements Adapte
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_add_complaint, container, false);
-
-        category = (Spinner)v.findViewById(R.id.category);
+        View v = inflater.inflate(R.layout.fragment_add_complaint, container, false);
+        category = v.findViewById(R.id.category);
         category.setOnItemSelectedListener(this);
-
-        ArrayAdapter adapter = new ArrayAdapter(getActivity(),android.R.layout.simple_spinner_item,complaintCategories);
+        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, complaintCategories);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         category.setAdapter(adapter);
-
         return v;
     }
 

@@ -19,7 +19,6 @@ import com.example.hp.campusconnect.dummy.DummyContent.DummyItem;
  * interface.
  */
 public class NotificationsFragment extends android.app.Fragment {
-
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
@@ -46,7 +45,6 @@ public class NotificationsFragment extends android.app.Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
@@ -56,7 +54,6 @@ public class NotificationsFragment extends android.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_notifications_list, container, false);
-
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -70,7 +67,6 @@ public class NotificationsFragment extends android.app.Fragment {
         }
         return view;
     }
-
 
     @Override
     public void onAttach(Context context) {
