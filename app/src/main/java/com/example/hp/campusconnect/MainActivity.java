@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onc(View v) {
-        Intent i = new Intent(this, HomeActivity.class);
+        Intent i = new Intent(this, Home.class);
         startActivity(i);
     }
 

@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">Campus Connect</string>
-    <string name="bottom_home">Home</string>
-    <string name="bottom_notifications">Notifications</string>
-    <string name="bottom_add_complaint">Add Complaint</string>
-    <string name="bottom_notices">Notices</string>
-    <string name="bottom_my_profile">My Profile</string>
+    <string name="bottom_home">" "</string>
+    <string name="bottom_notification">" "</string>
+    <string name="bottom_add">" "</string>
+    <string name="bottom_announcements">" "</string>
+    <string name="bottom_profile">" "</string>
+
 
     <string name="Complaint">Add a Complaint</string>
     <string name="subject">Subject</string>

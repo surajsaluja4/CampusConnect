@@ -20,7 +20,7 @@ import android.widget.Spinner;
  * Use the {@link AddComplaintFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AddComplaintFragment extends android.app.Fragment implements AdapterView.OnItemSelectedListener {
+public class AddComplaintFragment extends Fragment implements AdapterView.OnItemSelectedListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -90,22 +90,6 @@ public class AddComplaintFragment extends android.app.Fragment implements Adapte
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
