@@ -67,16 +67,6 @@ public class NoticesFragment extends android.app.Fragment {
         ListView listView = view.findViewById(R.id.notices_list_view);
         SimpleAdapter simpleAdapter = new SimpleAdapter(view.getContext(), arr, R.layout.fragment_notices, from, to);
         listView.setAdapter(simpleAdapter);
-        /*if (view instanceof RecyclerView) {
-            Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
-            if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-            }
-            recyclerView.setAdapter(new MyNoticesRecyclerViewAdapter(DummyContent.ITEMS, mListener));
-        }*/
         return view;
     }
 
