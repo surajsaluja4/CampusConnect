@@ -8,8 +8,6 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.example.hp.campusconnect.dummy.DummyContent;
-
 public class HomeActivity extends AppCompatActivity implements NotificationsFragment.OnListFragmentInteractionListener, NoticesFragment.OnListFragmentInteractionListener, HomeFragment.OnFragmentInteractionListener, AddComplaintFragment.OnFragmentInteractionListener, MyProfileFragment.OnFragmentInteractionListener {
     BottomNavigationView bottomNavigationView;
 
@@ -48,7 +46,7 @@ public class HomeActivity extends AppCompatActivity implements NotificationsFrag
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onListFragmentInteraction() {
 
     }
 

@@ -2,15 +2,14 @@ package com.example.hp.campusconnect;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
-import com.example.hp.campusconnect.dummy.DummyContent;
-import com.example.hp.campusconnect.dummy.DummyContent.DummyItem;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * A fragment representing a list of Items.
@@ -55,7 +54,20 @@ public class NotificationsFragment extends android.app.Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_notifications_list, container, false);
         // Set the adapter
-        if (view instanceof RecyclerView) {
+        String from[] = {"title", "smallDescription", "time"};
+        int to[] = {R.id.title, R.id.small_description, R.id.time};
+        ArrayList<HashMap<String, String>> arr = new ArrayList<>();
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put(from[0], "Your complaint has been resolved!");
+        hashMap.put(from[1], "Your complaint regarding malfunctioning of air conditioner in E-block, room no. 103 issued on 5th January 2018 has been resolved.".substring(0, 50) + "...");
+        hashMap.put(from[2], "12 January 2018");
+        for (int i = 0; i < 25; i++) {
+            arr.add(hashMap);
+        }
+        ListView listView = view.findViewById(R.id.notifications_list_view);
+        SimpleAdapter simpleAdapter = new SimpleAdapter(view.getContext(), arr, R.layout.fragment_notifications, from, to);
+        listView.setAdapter(simpleAdapter);
+        /*if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             if (mColumnCount <= 1) {
@@ -64,7 +76,7 @@ public class NotificationsFragment extends android.app.Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
             recyclerView.setAdapter(new MyNotificationsRecyclerViewAdapter(DummyContent.ITEMS, mListener));
-        }
+        }*/
         return view;
     }
 
@@ -97,6 +109,6 @@ public class NotificationsFragment extends android.app.Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction();
     }
 }
