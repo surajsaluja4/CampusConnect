@@ -8,7 +8,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-public class HomeActivity extends AppCompatActivity implements NotificationsFragment.OnListFragmentInteractionListener, NoticesFragment.OnListFragmentInteractionListener, HomeFragment.OnFragmentInteractionListener, AddComplaintFragment.OnFragmentInteractionListener, MyProfileFragment.OnFragmentInteractionListener {
+public class HomeActivity extends AppCompatActivity implements NotificationsFragment.OnListFragmentInteractionListener, NoticesFragment.OnListFragmentInteractionListener, HomeFragment.OnFragmentInteractionListener, AddComplaintFragment.OnFragmentInteractionListener {
     BottomNavigationView bottomNavigationView;
 
     @Override
