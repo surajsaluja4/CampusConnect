@@ -1,16 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_light"
-    android:orientation="vertical"
-    tools:context="com.example.hp.campusconnect.SelectUser">
-
+    android:orientation="vertical">
     <!-- TODO: Update blank fragment layout -->
-
     <Button
-        android:id="@+id/nodal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -27,7 +21,6 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/teacher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -42,18 +35,17 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/stu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:background="@android:color/background_light"
         android:drawableTop="@drawable/student"
+        android:onClick="selectUser"
         android:paddingEnd="15dp"
         android:paddingStart="15dp"
         android:text="@string/student"
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
         android:textStyle="bold" />
-
 </LinearLayout>

@@ -8,6 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -20,6 +26,10 @@ import java.util.HashMap;
 public class NoticesFragment extends android.app.Fragment {
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
+    ArrayList<HashMap<String, String>> arr1;
+    String from[] = {"title", "description", "time"};
+    int to[] = {R.id.title, R.id.small_description, R.id.time};
+    View view;
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
@@ -53,20 +63,23 @@ public class NoticesFragment extends android.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_notices_list, container, false);
+        this.view = view;
         // Set the adapter
-        String from[] = {"title", "smallDescription", "time"};
-        int to[] = {R.id.title, R.id.small_description, R.id.time};
-        ArrayList<HashMap<String, String>> arr = new ArrayList<>();
-        HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put(from[0], "Sessional Examinations!");
-        hashMap.put(from[1], "1st Sessional Examinations for B.Tech. classes have been scheduled from 2nd February 2018 to 5th February 2018.".substring(0, 50) + "...");
-        hashMap.put(from[2], "12 January 2018");
-        for (int i = 0; i < 25; i++) {
-            arr.add(hashMap);
-        }
-        ListView listView = view.findViewById(R.id.notices_list_view);
-        SimpleAdapter simpleAdapter = new SimpleAdapter(view.getContext(), arr, R.layout.fragment_notices, from, to);
-        listView.setAdapter(simpleAdapter);
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("notices");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                arr1 = (ArrayList<HashMap<String, String>>) dataSnapshot.getValue();
+                ListView listView = NoticesFragment.this.view.findViewById(R.id.notices_list_view);
+                SimpleAdapter simpleAdapter = new SimpleAdapter(NoticesFragment.this.view.getContext(), arr1, R.layout.fragment_notices, from, to);
+                listView.setAdapter(simpleAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
         return view;
     }
 

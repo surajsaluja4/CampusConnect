@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity implements LoginFragment.OnFragmentInteractionListener, RegisterFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements SelectUser.OnFragmentInteractionListener, LoginFragment.OnFragmentInteractionListener, RegisterFragment.OnFragmentInteractionListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getFragmentManager().beginTransaction().add(R.id.main_frame_layout, new LoginFragment()).commit();
+        getFragmentManager().beginTransaction().add(R.id.main_frame_layout, new SelectUser()).commit();
     }
 
     @Override
@@ -20,10 +20,15 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnF
     }
 
     public void login(View view) {
+        this.finish();
         startActivity(new Intent(getApplicationContext(), HomeActivity.class));
     }
 
     public void signUp(View view) {
-        getFragmentManager().beginTransaction().replace(R.id.main_frame_layout, new RegisterFragment()).commit();
+        getFragmentManager().beginTransaction().replace(R.id.main_frame_layout, new RegisterFragment()).addToBackStack(null).commit();
+    }
+
+    public void selectUser(View view) {
+        getFragmentManager().beginTransaction().replace(R.id.main_frame_layout, new LoginFragment()).addToBackStack(null).commit();
     }
 }

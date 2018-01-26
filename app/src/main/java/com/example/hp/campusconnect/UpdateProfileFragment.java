@@ -8,25 +8,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link SelectUser.OnFragmentInteractionListener} interface
+ * {@link UpdateProfileFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link SelectUser#newInstance} factory method to
+ * Use the {@link UpdateProfileFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SelectUser extends android.app.Fragment {
+public class UpdateProfileFragment extends android.app.Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
     private OnFragmentInteractionListener mListener;
 
-    public SelectUser() {
+    public UpdateProfileFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +39,11 @@ public class SelectUser extends android.app.Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SelectUser.
+     * @return A new instance of fragment UpdateProfileFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SelectUser newInstance(String param1, String param2) {
-        SelectUser fragment = new SelectUser();
+    public static UpdateProfileFragment newInstance(String param1, String param2) {
+        UpdateProfileFragment fragment = new UpdateProfileFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,7 +64,7 @@ public class SelectUser extends android.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_select_user, container, false);
+        return inflater.inflate(R.layout.fragment_update_profile, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
