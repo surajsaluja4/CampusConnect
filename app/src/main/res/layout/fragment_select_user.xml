@@ -9,16 +9,6 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="@string/select_your_designation"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_dark"
-        android:textSize="15sp" />
-
     <Button
         android:id="@+id/nodal"
         android:layout_width="wrap_content"
