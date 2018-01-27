@@ -4,4 +4,14 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="spinnerWidth">25dp</dimen>
     <dimen name="elementSpacing">10dp</dimen>
+    <dimen name="textSize">20dp</dimen>
+    <dimen name="marginSize1">25dp</dimen>
+    <dimen name="marginSize2">10dp</dimen>
+    <dimen name="marginSize3">6dp</dimen>
+    <dimen name="marginSize4">13dp</dimen>
+    <dimen name="viewWidth">1dp</dimen>
+    <dimen name="DialogBox">340dp</dimen>
+    <dimen name="DialogBox1">250dp</dimen>
+    <dimen name="DialogBox2">200dp</dimen>
+
 </resources>

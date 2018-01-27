@@ -33,4 +33,24 @@
     <string name="nodal_officer">Nodal Officer</string>
     <string name="teacher">Teacher</string>
     <string name="student">Student</string>
+
+    /////
+
+    <string name="changePassword">Change Password</string>
+    <string name="updateProfile">Update Profile</string>
+    <string name="edit">Edit</string>
+    <string name="name">Name:</string>
+    <string name="mobileNumber">Mobile Number:</string>
+    <string name="currentPassword">Current Password:</string>
+    <string name="newPassword">New Password:</string>
+    <string name="saveChanges">Save Changes</string>
+    <string name="changeName">Change Your Name:</string>
+    <string name="enterName">Enter Your Name:</string>
+    <string name="changeNumber">Change Your Mobile Number:</string>
+    <string name="enteroldNumber">Enter Your New Mobile Number</string>
+    <string name="Continue">Continue</string>
+    <string name="verifyOtp">Verify Otp</string>
+    <string name="verify">Verify</string>
+    <string name="enterOtp">Enter Otp You Received:</string>
+
 </resources>

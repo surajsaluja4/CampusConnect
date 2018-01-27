@@ -1,13 +1,171 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.hp.campusconnect.UpdateProfileFragment">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/updateProfile"
+        android:text="@string/updateProfile"
+        android:textSize="@dimen/spinnerWidth"/>
+
+    <View
+        android:id="@+id/myRectangleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_below="@+id/updateProfile"
+        android:layout_marginTop="@dimen/textSize"
+        android:layout_marginBottom="@dimen/textSize"
+        android:background="@drawable/rectangle"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/myRectangleView"
+        android:layout_marginStart="@dimen/marginSize1"
+        android:layout_marginTop="@dimen/marginSize2"
+        android:text="@string/name"
+        android:textSize="@dimen/textSize" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/yourName"
+        android:text="@string/your_name"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="@dimen/marginSize3"
+        android:layout_marginStart="@dimen/marginSize1"
+        android:textSize="@dimen/activity_horizontal_margin"/>
+
+    <Button
+        android:id="@+id/edit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/name"
+        android:layout_marginEnd="@dimen/marginSize1"
+        android:text="@string/edit" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/viewWidth"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/yourName"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:background="@color/nav_back" />
+
+    <TextView
+        android:id="@+id/mobileNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginSize1"
+        android:layout_below="@+id/view1"
+        android:layout_marginTop="21dp"
+        android:text="@string/mobileNumber"
+        android:textSize="@dimen/textSize" />
+
+    <TextView
+        android:id="@+id/mobileNumber1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginSize1"
+        android:layout_below="@+id/mobileNumber"
+        android:layout_marginTop="@dimen/marginSize3"
+        android:text="@string/phone_no"
+        android:textSize="@dimen/activity_horizontal_margin" />
+
+    <Button
+        android:id="@+id/edit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edit1"
+        android:layout_alignTop="@+id/mobileNumber"
+        android:text="@string/edit" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/mobileNumber1"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:background="@color/nav_back" />
+
+    <TextView
+        android:id="@+id/emailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginSize1"
+        android:layout_below="@+id/view2"
+        android:layout_marginTop="21dp"
+        android:text="@string/email_id"
+        android:textSize="@dimen/textSize" />
+
+    <TextView
+        android:id="@+id/emailAddress1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginSize1"
+        android:layout_below="@+id/emailAddress"
+        android:layout_marginTop="@dimen/marginSize3"
+        android:text="@string/email_id"
+        android:textSize="@dimen/activity_horizontal_margin" />
+
+    <Button
+        android:id="@+id/edit3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/emailAddress"
+        android:layout_alignBottom="@+id/emailAddress"
+        android:layout_alignStart="@+id/edit2"
+        android:text="@string/edit" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/emailAddress1"
+        android:layout_marginTop="@dimen/marginSize4"
+        android:background="@color/nav_back" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginSize1"
+        android:layout_below="@+id/view3"
+        android:layout_marginTop="21dp"
+        android:text="@string/password"
+        android:textSize="@dimen/textSize" />
+
+    <TextView
+        android:id="@+id/password1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/marginSize1"
+        android:layout_below="@+id/password"
+        android:layout_marginTop="@dimen/marginSize3"
+        android:text="@string/password"
+        android:inputType="textPassword"
+        android:textSize="@dimen/activity_horizontal_margin" />
+
+    <Button
+        android:id="@+id/edit4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/password"
+        android:layout_alignBottom="@+id/password"
+        android:layout_alignStart="@+id/edit3"
+        android:text="@string/edit" />
+
+</RelativeLayout>

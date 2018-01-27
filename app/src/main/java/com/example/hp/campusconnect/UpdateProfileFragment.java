@@ -1,5 +1,6 @@
 package com.example.hp.campusconnect;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -17,7 +19,7 @@ import android.view.ViewGroup;
  * Use the {@link UpdateProfileFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UpdateProfileFragment extends android.app.Fragment {
+public class UpdateProfileFragment extends android.app.Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -26,6 +28,9 @@ public class UpdateProfileFragment extends android.app.Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    Button edit1,edit2,edit3,edit4;
+    Dialog d;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,7 +69,18 @@ public class UpdateProfileFragment extends android.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_update_profile, container, false);
+        View v = inflater.inflate(R.layout.fragment_update_profile, container, false);
+        edit1 = (Button)v.findViewById(R.id.edit1);
+        edit2 = (Button)v.findViewById(R.id.edit2);
+        edit3 = (Button)v.findViewById(R.id.edit3);
+        edit4 = (Button)v.findViewById(R.id.edit4);
+
+        edit1.setOnClickListener(this);
+        edit2.setOnClickListener(this);
+        edit3.setOnClickListener(this);
+        edit4.setOnClickListener(this);
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -85,10 +101,43 @@ public class UpdateProfileFragment extends android.app.Fragment {
         }
     }
 
+
+
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if(v.getId()==R.id.edit1)
+        {
+            d = new Dialog(getActivity());
+            d.setContentView(R.layout.update_name_frame);
+            d.setCancelable(true);
+            d.show();
+        }
+        if(v.getId()==R.id.edit2)
+        {
+            d = new Dialog(getActivity());
+            d.setContentView(R.layout.update_mobile_no_frame);
+            d.setCancelable(true);
+            d.show();
+        }
+        if(v.getId()==R.id.edit3)
+        {
+
+        }
+        if(v.getId()==R.id.edit4)
+        {
+            d = new Dialog(getActivity());
+            d.setContentView(R.layout.update_password_frame);
+            d.setCancelable(true);
+            d.show();
+        }
+
     }
 
     /**
